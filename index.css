@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, #4CAF50, #2196F3);
+}
+
+ #city-input {
+    padding: 15px;
+    margin: 5px 0;
+    width: 50%;
+    border: 1px solid #110e0e;
+    border-radius: 5px;
+    font-size: 16px;
+} 
+
+#city-input-btn{
+    padding: 7px;
+    background-color: #F2D2BD;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+
+#city-input-btn:hover {
+    background-color: #abb1b8;
+}
+
