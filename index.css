@@ -1,33 +1,204 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: radial-gradient(ellipse at center, #4CAF50, #2196F3);
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); 
+    background-size: cover;
+    background-position: center;
+
 }
 
- #city-input {
-    padding: 25px;
-    margin: 5px 0;
-    width: 50%;
-    border: 1px solid #110e0e;
-    border-radius: 5px;
-    font-size: 16px;
-} 
+.container {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    transition: height .6s ease;
+}
 
-#city-input-btn{
-    padding: 7px;
-    background-color: #F2D2BD;
-    border-radius: 5px;
-    font-size: 12px;
+ .search-box {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 48px 0  42px; 
+}
+
+.search-box input::placeholder{
+    color: white;
+    text-transform: capitalize;
+}
+
+.search-box button {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+    padding: 0 40px 0 5px;
     cursor: pointer;
-    display: block;
-    margin-top: 10px;
 }
 
-#city-input-btn:hover {
-    background-color: #abb1b8;
+.search-box i{
+    position: absolute;
+    left: 10px;
+    font-size: 28px;
 }
 
+.weather-box {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.weather-box,
+.weather-details,
+.not-found {
+    visibility: hidden;
+}
+
+.weather-box.active,
+.weather-details.active,
+.not-found.active {
+    visibility: visible;
+}
+
+.weather-box .box,
+.not-found .box{
+    transform: translateY(-100%);
+}
+
+.weather-box.active .box,
+.not-found.active .box{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: .1s;
+}
+
+
+.weather-box img{
+    width: 50%;
+}
+
+.weather-box .temperature{
+    position: relative;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 20px 0 6px -30px;
+}
+
+.weather-box .temperature span{
+    position: absolute;
+    font-size: 24px;
+    margin-left: 3px;
+}
+
+.weather-box .description {
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+
+}
+
+.weather-details {
+    position: absolute;
+    bottom: 40px;
+    left:0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+}
+
+.weather-details .wind, 
+.weather-details .humidity{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    /* transform: translateY(-100%); */
+}
+
+/* .weather-details.active .wind, 
+.weather-details.active .humidity{
+    transform: translateY(-100%);
+    transition: transform 1s ease;
+    transition-delay: 1.2s;
+} */
+
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.weather-details i{
+    font-size: 50px;
+    margin-right: 10px;
+}
+
+.weather-details span{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather-details p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.not-found{
+    position: absolute;
+    top: 125px;
+    left: 65px;
+    width: 70%;
+    text-align: center;
+    margin-right: 200px;
+}
+
+.not-found img{
+    width: 50%
+}
+
+.not-found p{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
