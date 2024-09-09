@@ -10,6 +10,6 @@ This simple web application allows users to check the current weather conditions
 ### App Preview
 
 ![Search Screen](images/search.png)<br>
-![Screen 1]("images/screen1.png")<br>
+![Screen 1](images/screen1.png)<br>
 ![Screen 2](images/screen2.png)<br>
 ![Screen 3](images/screen3.png)
